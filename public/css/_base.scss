@@ -1,0 +1,33 @@
+
+
+/*** HEADER ***/
+.header
+{
+  background-image: url("../images/backgroundImageHeader.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.navHeader
+{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2em;
+}
+
+.title
+{
+  font-size: 60px;
+  align-self: center;
+  margin-top: 400px;
+}
+
+
+
+
+
+/*** FOOTER ***/
