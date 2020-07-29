@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-around;
   padding-top: 2em;
+  text-transform: uppercase;
 }
 
 .title
@@ -31,3 +32,38 @@
 
 
 /*** FOOTER ***/
+.footer
+{
+  background-image: url("../images/backgroundImageFooter.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 2em;
+  text-transform: uppercase;
+}
+
+.navFooter{
+  width: 50%;
+}
+
+.navLu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.blockFooter
+{
+  text-align: center;
+  width: 50%;
+}
+
+.pipe
+{
+  width: 1px;
+  height: 25px;
+  border:solid 1px white;
+}

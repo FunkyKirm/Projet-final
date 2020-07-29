@@ -8,7 +8,7 @@
 
     <title>TheGreatSpeaks</title>
     <link rel="stylesheet" href="{{ asset ('css/main.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header class="header">
@@ -28,16 +28,23 @@
 {% block content %}
 
 {% endblock content %}
-<footer>
+<footer class="footer">
+    <div class="blockFooter">
+        <p>© 2020 THE GREAT SPEAKS, all rights reserved.</p>
+    </div>
+    <div class="pipe"></div>
+    <nav class="navFooter">
+        <ul class="navLu">
+            <li>{#<a href="{{ path("about") }}">#}Contact</li>
+            <li>{#<a href="{{ path("mountains_list") }}">#}Explore</li>
+            <li>{#<a href="{{ path("articles_list") }}">#}Journal</li>
+            <li>{#<a href="{{ path("search") }}">#}Recherche</li>
+        </ul>
+    </nav>
 
 </footer>
 
 <!-- mettre des logos marque-->
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous"></script>
 
-    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>
