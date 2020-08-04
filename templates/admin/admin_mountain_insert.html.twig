@@ -1,0 +1,45 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block content %}
+
+    <div class="container" style="margin-top: 50px">
+        {{ form_start(mountainForm) }}
+        <div class="row flex-column" style="width: 50%; margin: 0 auto">
+            <div class="md-form form-group">
+                {{ form_label(mountainForm.name) }}
+                {{ form_widget(mountainForm.name, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(mountainForm.name) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(mountainForm.altitude) }}
+                {{ form_widget(mountainForm.altitude, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(mountainForm.altitude) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(mountainForm.difficulty) }}
+                {{ form_widget(mountainForm.difficulty, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(mountainForm.difficulty) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(mountainForm.localisation) }}
+                {{ form_widget(mountainForm.localisation, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(mountainForm.localisation) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(mountainForm.description) }}
+                {{ form_widget(mountainForm.description, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(mountainForm.description) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(mountainForm.mountainCover) }}
+                {{ form_widget(mountainForm.mountainCover, {'attr': {'class': 'form-control input_mountain'}}) }}
+                {{ form_errors(mountainForm.mountainCover) }}
+            </div>
+            <div class="md-form form-group" style="margin: 0 auto">
+                {{ form_widget(mountainForm.submit, {'attr': {'class': 'btn btn-lg btn-primary submit'}}) }}
+            </div>
+        </div>
+        {{ form_end(mountainForm) }}
+    </div>
+
+{% endblock %}

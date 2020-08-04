@@ -1,9 +1,9 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
 {% block content %}
 <main>
     <section class="mountains">
-        <h3>Explore The Mountains</h3>
+        <h3 id="explore">Explore The Mountains</h3>
         <p>
             <span>
                 Lorem ipsum dolor sit amet,
@@ -11,10 +11,18 @@
                 dicta dolor doloribus eligendi eum facere illo incidunt!
             </span>
         </p>
-        <a>SEE MORE ></a>
+        <div class="block">
+            {#{% for mountain in mountains %}
+                <div class="mountains">
+                    <img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="">
+                    <p>{{ mountain.name }}</p>
+                    <a href="{{ path("mountains_list") }}">SEE MORE ></a>
+                </div>
+            {% endfor %}#}
+        </div>
     </section>
     <section class="articles">
-        <h3>
+        <h3 id="journal">
             Journal
         </h3>
         <p>
@@ -24,7 +32,13 @@
                 dicta dolor doloribus eligendi eum facere illo incidunt!
             </span>
         </p>
-        <a>ALL POST ></a>
+        {#{% for article in articles %}
+            <div class="mountains">
+                <img class="imgResp" src="{{  asset('uploads/book/'~mountain.mountainCover) }}" alt="">
+                <p>{{ article.title }}</p>
+                <a href="{{ path("articles_list") }}">ALL POST ></a>
+            </div>
+        {% endfor %}#}
     </section>
 </main>
 {% endblock content %}

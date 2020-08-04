@@ -3,7 +3,6 @@
 
 namespace App\Controller;
 
-use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,7 +11,7 @@ class AdminArticleController extends AbstractController{
     /**
      * @Route("/admin/articles", name="admin_articles")
      */
-    public function adminHome ()
+    public function adminArticles ()
     {
         return $this->render('admin/admin_base.html.twig');
     }

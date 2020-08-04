@@ -1,0 +1,21 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+
+{% block content %}
+    <div class="block">
+        {% for mountain in mountains %}
+            <div class="book">
+                <img class="imgResp" src="{{  asset('uploads/book/'~mountain.mountainCover) }}" alt="">
+                <p>{{ mountain.name }}</p>
+                <a href="{{ path("admin_mountain") }}">Voir la montagne </a>
+                <br>
+                <a class="edit" href="{{ path("admin_mountain_update", {"id":mountain.id}) }}"> <i class="fas fa-edit"></i>Modifier la montagne </a>
+                <br>
+                <a class="supprimer" href="{{ path("admin_mountain_delete", {"id":mountain.id}) }}"> <i class="fas fa-times"></i> Supprimer la montagne</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="ajout">
+        <a class= "ajouter" href="{{ path("admin_mountains_insert") }}"> Ajouter une montagne  </a>
+    </div>
+{% endblock content %}
