@@ -75,9 +75,6 @@ class AdminMountainController extends AbstractController{
             return $this -> redirectToRoute("admin_mountains");
         }
 
-
-
-
         return $this -> render("admin/admin_mountain_insert.html.twig", [
             "mountainForm" => $mountainForm -> createView()
         ]);

@@ -5,7 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
                 mountain_cover_directory: '%kernel.project_dir%/public/uploads/mountain'
+                article_cover_directory: '%kernel.project_dir%/public/uploads/article'
 services:
+
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

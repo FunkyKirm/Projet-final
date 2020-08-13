@@ -1,0 +1,27 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+
+{% block content %}
+    <a href="{{ path("admin_home")}}">Tableau de bord</a>
+    <h1 class="titleDashboard">ARTICLES</h1>
+    <div class="divider"></div>
+    <div class="adminArticles">
+        {% for article in articles %}
+            <div class="adminArticle">
+                <div class="ImgArticle">
+                    <img class="imgResp" src="{{  asset('uploads/article/'~article.articleCover) }}" alt="article">
+                </div>
+                <p class="nameDashboard">{{ article.date }}</p>
+                <p class="nameDashboard">{{ article.title }}</p>
+                <div class="divider"></div>
+                {#<a href="{{ path("admin_article") }}">Voir la montagne </a>#}
+                <a class="edit" href="{{ path("admin_article_update", {"id":article.id}) }}"> <i class="fas fa-edit"></i>Modifier l'article </a>
+                <br>
+                <a class="delete" href="{{ path("admin_article_delete", {"id":article.id}) }}"> <i class="fas fa-times"></i> Supprimer l'article</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="add">
+        <a class= "addBtn" href="{{ path("admin_article_insert") }}"> Ajouter un article  </a>
+    </div>
+{% endblock content %}

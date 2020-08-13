@@ -18,7 +18,7 @@ class AdminController extends AbstractController{
         $mountains = $mountainsRepository->findBy([], ['id'=> 'DESC'],3);
         $articles = $articlesRepository->findBy([], ['id'=>'DESC'], 3);
 
-        return $this->render('admin/admin_base.html.twig', [
+        return $this->render('admin/admin_home.html.twig', [
             "mountains" => $mountains,
             "articles" => $articles
             ]);

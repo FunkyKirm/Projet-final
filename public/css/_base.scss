@@ -1,8 +1,7 @@
 
 
 /*** HEADER ***/
-.header
-{
+.header {
   background-image: url("../images/backgroundImageHeader.jpg");
   background-size: cover;
   background-position: center;
@@ -11,8 +10,7 @@
   display: flex;
   flex-direction: column;
 }
-.navHeader
-{
+.navHeader {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
@@ -20,13 +18,18 @@
   text-transform: uppercase;
 }
 
-.title
-{
+.title {
   font-size: 60px;
   align-self: center;
   margin-top: 400px;
 }
 
+.textTitle
+{
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
+}
 
 
 

@@ -2,15 +2,18 @@
 
 
 {% block content %}
-    <div class="blockMountain">
+    <a style="text-align: center" href={{ path("admin_home")}}>Tableau de bord</a>
+    <h1 class="titleDashboard">MONTAGNES</h1>
+    <div class="divider"></div>
+    <div class="adminMountains">
         {% for mountain in mountains %}
-            <div class="mountain">
-                <div class="blockImg">
-                    <img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="">
+            <div class="adminMountain">
+                <div class="ImgMountain">
+                    <img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="mountain">
                 </div>
-                <p>{{ mountain.name }}</p>
+                <p class="nameDashboard">{{ mountain.name }}</p>
+                <div class="divider"></div>
                 {#<a href="{{ path("admin_mountain") }}">Voir la montagne </a>#}
-                <br>
                 <a class="edit" href="{{ path("admin_mountain_update", {"id":mountain.id}) }}"> <i class="fas fa-edit"></i>Modifier la montagne </a>
                 <br>
                 <a class="delete" href="{{ path("admin_mountain_delete", {"id":mountain.id}) }}"> <i class="fas fa-times"></i> Supprimer la montagne</a>
@@ -18,6 +21,6 @@
         {% endfor %}
     </div>
     <div class="add">
-        <a class= "btn btn-lg btn-primary" href="{{ path("admin_mountain_insert") }}"> Ajouter une montagne  </a>
+        <a class= "addBtn" href="{{ path("admin_mountain_insert") }}"> Ajouter une montagne  </a>
     </div>
 {% endblock content %}

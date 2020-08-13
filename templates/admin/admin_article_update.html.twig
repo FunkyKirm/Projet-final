@@ -1,0 +1,41 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block content %}
+
+    <div class="container blockForm" >
+        {{ form_start(articleForm, {'attr': {'class': 'form'}}) }}
+        <div class="row flex-column p-5 rounded">
+            <a href="{{ path("admin_articles")}}">Retour</a>
+            <h1 class="text-center">MODIFIER</h1>
+            <div class="divider"></div>
+            <div class="md-form form-group">
+                {{ form_label(articleForm.title) }}
+                {{ form_widget(articleForm.title, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(articleForm.title) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(articleForm.date) }}
+                {{ form_widget(articleForm.date, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(articleForm.date) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(articleForm.mountains) }}
+                {{ form_widget(articleForm.mountains, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(articleForm.mountains) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(articleForm.content) }}
+                {{ form_widget(articleForm.content, {'attr': {'class': 'form-control input'}}) }}
+                {{ form_errors(articleForm.content) }}
+            </div>
+            <div class="md-form form-group">
+                {{ form_label(articleForm.articleCover) }}
+                {{ form_widget(articleForm.articleCover, {'attr': {'class': 'form-control input_article'}}) }}
+                {{ form_errors(articleForm.articleCover) }}
+            </div>
+                {{ form_widget(articleForm.submit, {'attr': {'class': 'submit buttonForm'}}) }}
+        </div>
+        {{ form_end(articleForm) }}
+    </div>
+
+{% endblock %}

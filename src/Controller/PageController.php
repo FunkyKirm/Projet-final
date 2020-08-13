@@ -3,6 +3,8 @@
 
 namespace App\Controller;
 
+use App\Repository\ArticlesRepository;
+use App\Repository\MountainsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,11 +13,19 @@ class PageController extends AbstractController{
     /**
      * @Route("/", name="home")
      */
-    public function home()
-    {
-        return $this->render('home.html.twig');
-    }
+    public function home(
+        MountainsRepository $mountainsRepository,
+        ArticlesRepository $articlesRepository
+        )
+        {
+            $mountains = $mountainsRepository->findBy([], ['id'=> 'DESC'],3);
+            $articles = $articlesRepository->findBy([], ['id'=>'DESC'], 3);
 
+            return $this->render('home.html.twig', [
+                "mountains" => $mountains,
+                "articles" => $articles
+            ]);
+        }
     /**
      * @Route("/about", name="about")
      */

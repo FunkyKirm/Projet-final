@@ -2,43 +2,57 @@
 
 {% block content %}
 <main>
-    <section class="mountains">
-        <h3 id="explore">Explore The Mountains</h3>
-        <p>
-            <span>
-                Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Deleniti
-                dicta dolor doloribus eligendi eum facere illo incidunt!
-            </span>
-        </p>
-        <div class="block">
-            {#{% for mountain in mountains %}
-                <div class="mountains">
-                    <img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="">
-                    <p>{{ mountain.name }}</p>
-                    <a href="{{ path("mountains_list") }}">SEE MORE ></a>
+    <h3 id="explore">Explore les Montagnes</h3>
+    <p class="textExplore">
+        <span>
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Deleniti
+            dicta dolor doloribus eligendi eum facere illo incidunt!
+            Lorem ipsum dolor sit amet,
+            dicta dolor doloribus eligendi eum facere illo incidunt!
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Deleniti
+        </span>
+    </p>
+    <div class="homeMountains">
+        {% for mountain in mountains %}
+            <div class="homeMountain">
+                <div class="ImgMountain">
+                    <a href="{{ path("admin_mountains", {"id":mountain.id}) }}"><img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="mountain"></a>
                 </div>
-            {% endfor %}#}
-        </div>
-    </section>
-    <section class="articles">
-        <h3 id="journal">
-            Journal
-        </h3>
-        <p>
-            <span>
-                Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Deleniti
-                dicta dolor doloribus eligendi eum facere illo incidunt!
-            </span>
-        </p>
-        {#{% for article in articles %}
-            <div class="mountains">
-                <img class="imgResp" src="{{  asset('uploads/book/'~mountain.mountainCover) }}" alt="">
-                <p>{{ article.title }}</p>
-                <a href="{{ path("articles_list") }}">ALL POST ></a>
+                <p>{{ mountain.name }} </p>
+                <p>{{ mountain.localisation}} </p>
             </div>
-        {% endfor %}#}
-    </section>
+        {% endfor %}
+    </div>
+    <a class="linkMountain" href="{{ path("admin_mountains") }}">TOUTES LES MONTAGNES ></a>
+
+
+    <h3 id="journal">
+        Le Journal
+    </h3>
+    <p class="textJournal">
+        <span>
+             Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Deleniti
+            dicta dolor doloribus eligendi eum facere illo incidunt!
+            Lorem ipsum dolor sit amet,
+            dicta dolor doloribus eligendi eum facere illo incidunt!
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Deleniti
+        </span>
+    </p>
+    <div class="homeArticles">
+            {% for article in articles %}
+                <div class="homeArticle">
+                    <div class="ImgArticle">
+                        <a href="{{ path("admin_articles", {"id":article.id}) }}"><img class="imgResp" src="{{  asset('uploads/article/'~article.articleCover) }}" alt="article"></a>
+                    </div>
+                    <p style="text-transform: uppercase">{{ article.date|date('none', 'none', 'fr', null, 'EEEE d MMMM Y') }}</p>
+                    <p>{{ article.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="linkArticle" href="{{ path("admin_articles") }}">TOUS LES ARTICLES ></a>
 </main>
 {% endblock content %}

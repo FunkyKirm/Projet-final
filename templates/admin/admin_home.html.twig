@@ -1,0 +1,33 @@
+{% extends "admin/admin_base.html.twig" %}
+
+{% block content %}
+<h1 class="titleDashboard">Tableau de bord</h1>
+<div class="divider"></div>
+<h2 style="text-align: center">Montagnes</h2>
+<div class="adminMountains">
+    {% for mountain in mountains %}
+        <div class="adminMountain">
+            <div class="ImgMountain">
+                <a href="{{ path("admin_mountains") }}"><img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="mountain"></a>
+            </div>
+            <p>{{ mountain.name }} </p>
+            <a href="{{ path("admin_mountains") }}">Voir toutes montagnes </a>
+        </div>
+    {% endfor %}
+</div>
+<div class="divider"></div>
+<h2 style="text-align: center">Articles</h2>
+    <div class="adminArticles">
+        {% for article in articles %}
+            <div class="adminArticle">
+                <div class="ImgArticle">
+                    <a href="{{ path("admin_articles") }}"><img class="imgResp" src="{{  asset('uploads/article/'~article.articleCover) }}" alt="article"></a>
+                </div>
+                <p>{{ article.title }}</p>
+                <a href="{{ path("admin_articles") }}">Voir tous les articles</a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}
