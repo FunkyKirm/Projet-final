@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+<main>
+    <h1 class="titleDashboard">MONTAGNES</h1>
+    <div class="pageMountains">
+        {% for mountain in mountains %}
+            <div class="pageMountain">
+                <div class="ImgMountain">
+                    <img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="mountain">
+                </div>
+                <p>{{ mountain.name }} </p>
+                <p>{{ mountain.localisation}} </p>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ArticlesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,9 +13,15 @@ class ArticleController extends AbstractController{
     /**
      * @Route("/articles", name="articles_list")
      */
-    public function ArticlesList()
+    public function ArticlesList(
+        ArticlesRepository $articlesRepository
+    )
     {
-        return $this->render('mountains.html.twig');
+        $articles = $articlesRepository->findBy([], ['id'=> 'DESC']);
+
+        return $this->render('articles.html.twig', [
+            "articles" => $articles,
+        ]);
     }
 
     /**

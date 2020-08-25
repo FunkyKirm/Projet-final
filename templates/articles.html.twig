@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+<main>
+    <h1 class="titleDashboard">ARTICLES</h1>
+    <div class="pageArticles">
+        {% for article in articles %}
+            <div class="pageArticle">
+                <div class="ImgArticle">
+                    <img class="imgResp" src="{{  asset('uploads/article/'~article.articleCover) }}" alt="article">
+                </div>
+                <p style="text-transform: uppercase">{{ article.date|localizeddate('none', 'none', 'fr', null, 'd MMMM, Y') }}</p>
+                <p>{{ article.title }} </p>
+                <p>{{ article.localisation}} </p>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

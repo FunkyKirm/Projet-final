@@ -1,6 +1,14 @@
 {% extends "admin/admin_base.html.twig" %}
 
 {% block content %}
+<nav>
+    <ul class="navHeader">
+        <li><a href="{{ path("about") }}">Menu</a></li>
+        <li><a href="">Article</a></li>
+        <li><a href="">Montagne</a></li>
+        <li><a href="{{ path("search") }}">Recherche</a></li>
+    </ul>
+</nav>
 <h1 class="titleDashboard">Tableau de bord</h1>
 <div class="divider"></div>
 <h2 style="text-align: center">Montagnes</h2>

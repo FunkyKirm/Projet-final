@@ -18,14 +18,14 @@
         {% for mountain in mountains %}
             <div class="homeMountain">
                 <div class="ImgMountain">
-                    <a href="{{ path("admin_mountains", {"id":mountain.id}) }}"><img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="mountain"></a>
+                    <a href="{{ path("mountains_list", {"id":mountain.id}) }}"><img class="imgResp" src="{{  asset('uploads/mountain/'~mountain.mountainCover) }}" alt="mountain"></a>
                 </div>
                 <p>{{ mountain.name }} </p>
                 <p>{{ mountain.localisation}} </p>
             </div>
         {% endfor %}
     </div>
-    <a class="linkMountain" href="{{ path("admin_mountains") }}">TOUTES LES MONTAGNES ></a>
+    <a class="linkMountain" href="{{ path("mountains_list") }}">TOUTES LES MONTAGNES ></a>
 
 
     <h3 id="journal">
@@ -48,7 +48,7 @@
                     <div class="ImgArticle">
                         <a href="{{ path("admin_articles", {"id":article.id}) }}"><img class="imgResp" src="{{  asset('uploads/article/'~article.articleCover) }}" alt="article"></a>
                     </div>
-                    <p style="text-transform: uppercase">{{ article.date|date('none', 'none', 'fr', null, 'EEEE d MMMM Y') }}</p>
+                    <p style="text-transform: uppercase">{{ article.date|localizeddate('none', 'none', 'fr', null, 'd MMMM, Y') }}</p>
                     <p>{{ article.title }}</p>
                 </div>
             {% endfor %}

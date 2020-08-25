@@ -7,7 +7,11 @@ parameters:
                 mountain_cover_directory: '%kernel.project_dir%/public/uploads/mountain'
                 article_cover_directory: '%kernel.project_dir%/public/uploads/article'
 services:
-
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        public: false
+        tags:
+            - { name: twig.extension }
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

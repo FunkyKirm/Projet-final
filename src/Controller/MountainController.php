@@ -3,6 +3,8 @@
 
 namespace App\Controller;
 
+use App\Repository\ArticlesRepository;
+use App\Repository\MountainsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,9 +13,15 @@ class MountainController extends AbstractController{
     /**
      * @Route("/mountains", name="mountains_list")
      */
-    public function MountainsList()
+    public function MountainsList(
+        MountainsRepository $mountainsRepository
+    )
     {
-        return $this->render('mountains.html.twig');
+        $mountains = $mountainsRepository->findBy([], ['id'=> 'DESC']);
+
+        return $this->render('mountains.html.twig', [
+            "mountains" => $mountains,
+        ]);
     }
 
     /**
